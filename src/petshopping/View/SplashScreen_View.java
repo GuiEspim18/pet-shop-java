@@ -4,6 +4,10 @@
  */
 package petshopping.View;
 
+import java.lang.System.Logger;
+import java.lang.System.Logger.Level;
+import petshopping.View.Home_View;
+
 /**
  *
  * @author labsfiap
@@ -15,6 +19,52 @@ public class SplashScreen_View extends javax.swing.JFrame {
      */
     public SplashScreen_View() {
         initComponents();
+        new Thread(){
+        
+            public void run() {
+        
+        
+            for (int i=0; i<101; i++){
+                        try {
+                            sleep(60); 
+
+                            loadingBar.setValue(i);
+
+                            if(loadingBar.getValue() == 10){
+
+                                message.setText("Fazendo a conexao com o banco de dados");
+//                                driver_conexao.carregardriver();
+                                sleep(2000);
+
+
+                            }else if (loadingBar.getValue() <=30){
+                                message.setText("Carregando o sistema");
+                              sleep(100);  
+                            } else if (loadingBar.getValue() <=99){
+                                message.setText("Carregamento quase completo");
+
+                            }else{
+                                message.setText("Carregamento completo. Seu programa sera iniciado.");
+
+                            sleep(3000);
+
+                            new Home_View().setVisible(true);
+                            setVisible(false);
+                            }
+
+
+                        } catch (InterruptedException ex) {
+//                            Logger.getLogger(SplashScreen_View.class.getName()).log(Level.SERVE, null, ex);
+                        }
+
+
+
+
+            }        
+        }
+        
+        }.start();
+        
     }
 
     /**
@@ -32,6 +82,7 @@ public class SplashScreen_View extends javax.swing.JFrame {
         title = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         message.setText("Carregando...");
 
@@ -45,14 +96,13 @@ public class SplashScreen_View extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(159, 159, 159)
-                        .addComponent(message))
+                        .addGap(127, 127, 127)
+                        .addComponent(title))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(28, 28, 28)
-                        .addComponent(loadingBar, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(127, 127, 127)
-                        .addComponent(title)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(loadingBar, javax.swing.GroupLayout.DEFAULT_SIZE, 348, Short.MAX_VALUE)
+                            .addComponent(message, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(24, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -78,7 +128,8 @@ public class SplashScreen_View extends javax.swing.JFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        pack();
+        setSize(new java.awt.Dimension(400, 300));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     /**
