@@ -1,0 +1,29 @@
+Processo:
+
+Atendimento do consultorio
+
+qual o problema que tem
+
+encaminhar para o exame
+
+registra a documentação e arquiva a pasta
+
+precissa das documentações para ter as informações do animal mais fáceis
+
+Fazer a agenda do veterinário
+
+Controle dos animais em quais etapas do tratamento o animal está, se tem alergia a algum medicamento
+
+Cada veerinário precisa ter o seu login específico, hrs do login, quando?
+
+Processo de atendimento do animal:
+
+Qual problema o animal apresenta, encaminha para o exame se for o caso, registra documentação na pasta.
+
+Funcionalidades:
+
+Registrar o animal no sistema,
+registrar o dono, 
+registrar histórico do animal, 
+registrar consultas, 
+registrar veterinário
