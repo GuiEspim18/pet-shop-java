@@ -34,7 +34,7 @@ public class SplashScreen_View extends javax.swing.JFrame {
 
                                 message.setText("Fazendo a conexao com o banco de dados");
 //                                driver_conexao.carregardriver();
-                                sleep(2000);
+                                sleep(500);
 
 
                             }else if (loadingBar.getValue() <=30){
@@ -46,7 +46,7 @@ public class SplashScreen_View extends javax.swing.JFrame {
                             }else{
                                 message.setText("Carregamento completo. Seu programa sera iniciado.");
 
-                            sleep(3000);
+                            sleep(500);
 
                             new Home_View().setVisible(true);
                             setVisible(false);
@@ -83,6 +83,10 @@ public class SplashScreen_View extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
+
+        jPanel1.setBackground(new java.awt.Color(240, 240, 240));
+
+        loadingBar.setBackground(new java.awt.Color(240, 240, 240));
 
         message.setText("Carregando...");
 
