@@ -5,6 +5,7 @@
 package petshopping;
 
 import petshopping.View.SplashScreen_View;
+import petshopping.View.Teste_View;
 
 /**
  *
@@ -16,7 +17,8 @@ public class PetShopping {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        new SplashScreen_View().setVisible(true);
+//        new SplashScreen_View().setVisible(true);
+        new Teste_View().setVisible(true);
     }
     
 }
